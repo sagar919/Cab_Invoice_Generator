@@ -44,17 +44,12 @@ namespace CabInvoiceTest
 
         [Test]
         public void GivenMultipleRides_ShouldReturnTotalFare()
-        {
-            //Arrange
+        {   //Arrange
             InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
-            Ride[] rides = { new Ride(2.0, 5), new Ride(0.1, 1) };
-
-            //Act
-            double fare = invoiceGenerator.CalculateFare(rides);
+            Ride[] rides = { new Ride(2.0, 5),new Ride(0.1, 1)};
+            InvoiceSummary invoiceSummary = invoiceGenerator.CalculateFare(rides);
             double expected = 30;
-
-            //Assert
-            Assert.AreEqual(expected, fare);
+            Assert.AreEqual(expected, invoiceSummary.TotalFare);
         }
     }
 }

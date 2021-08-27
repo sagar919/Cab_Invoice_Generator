@@ -20,18 +20,18 @@ namespace CabInvoiceGenerator
             //    rides[i].time = Convert.ToInt32(Console.ReadLine());
             //}
 
-            Ride[] rides = new Ride[2];
-            for (int i = 0; i < rides.Length; i++)
-            {
-                Console.WriteLine("Enter distance");
-                double distance = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Enter time");
-                int time = Convert.ToInt32(Console.ReadLine());
-                rides[i] = new Ride(distance, time);
-            }
+            //Ride[] rides = new Ride[2];
+            //for (int i = 0; i < rides.Length; i++)
+            //{
+            //    Console.WriteLine("Enter distance");
+            //    double distance = Convert.ToDouble(Console.ReadLine());
+            //    Console.WriteLine("Enter time");
+            //    int time = Convert.ToInt32(Console.ReadLine());
+            //    rides[i] = new Ride(distance, time);
+            //}
 
-            double fare2 = invoiceGenerator.CalculateFare(rides);
-            Console.WriteLine(fare2);
+            //double fare2 = invoiceGenerator.CalculateFare(rides);
+            //Console.WriteLine(fare2);
         }
     }
 }
