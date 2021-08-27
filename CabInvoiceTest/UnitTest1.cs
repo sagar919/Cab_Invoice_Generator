@@ -19,7 +19,7 @@ namespace CabInvoiceTest
             int time = 10;
 
             //Act
-            double fare = invoiceGenerator.CalculateFare(distance,time);
+            double fare = invoiceGenerator.CalculateFare(distance, time);
 
             //Assert
             Assert.AreEqual(40, fare);
@@ -40,6 +40,21 @@ namespace CabInvoiceTest
             //Assert
             Assert.AreEqual(5, fare);
 
+        }
+
+        [Test]
+        public void GivenMultipleRides_ShouldReturnTotalFare()
+        {
+            //Arrange
+            InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
+            Ride[] rides = { new Ride(2.0, 5), new Ride(0.1, 1) };
+
+            //Act
+            double fare = invoiceGenerator.CalculateFare(rides);
+            double expected = 30;
+
+            //Assert
+            Assert.AreEqual(expected, fare);
         }
     }
 }
